@@ -1,103 +1,182 @@
 import Image from "next/image";
+import ProductOptions from "./components/ProductOptions";
+import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="font-[family-name:var(--font-geist-sans)]">
+      {/* Hero Section with Background Image */}
+      <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="relative w-full h-full">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/background.jpg"
+              alt="Energy background"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+              className="brightness-[0.85]"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/30 via-transparent to-black/40"></div>
+            
+            {/* Animated Glow Effects */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-blob"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+            Tired of Feeling Drained? <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">This Cell-Level Energy Boost</span> Could Change Your Life in 7 Days.
+          </h1>
+          <h2 className="text-xl sm:text-2xl md:text-3xl mb-8 font-light max-w-4xl mx-auto animate-fade-in animation-delay-200">
+            Clinically researched supplement targeting cell performance, metabolism, and long-term health.
+          </h2>
+          <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
+            Try Mitolyn Risk-Free Today
+          </button>
+        </div>
+      </div>
+
+      {/* Benefits Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
+            What Makes Mitolyn a Game-Changer?
+          </h2>
+          
+          <p className="text-xl text-center mb-16 text-gray-700 max-w-4xl mx-auto">
+            Imagine waking up refreshed, thinking clearer, and moving like you're 10 years younger. That's the Mitolyn difference.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Product Image */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md aspect-square">
+                <Image
+                  src="/images/product-home.png"
+                  alt="Mitolyn Product"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  className="drop-shadow-xl"
+                />
+              </div>
+            </div>
+
+            {/* Benefits List */}
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 bg-emerald-100 rounded-full p-3">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Boost Natural Energy</h3>
+                  <p className="mt-2 text-gray-600">No more afternoon crashes. Fuel your cells and feel recharged all day, naturally.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 bg-blue-100 rounded-full p-3">
+                  <span className="text-2xl">🧠</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Sharpen Mental Focus</h3>
+                  <p className="mt-2 text-gray-600">Stay sharp, clear, and focused — whether you're working, studying, or parenting.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 bg-purple-100 rounded-full p-3">
+                  <span className="text-2xl">💪</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Support Cell Repair</h3>
+                  <p className="mt-2 text-gray-600">Backed by science — Mitolyn helps restore your cells from the inside out.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 bg-red-100 rounded-full p-3">
+                  <span className="text-2xl">🔥</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Boost Metabolism</h3>
+                  <p className="mt-2 text-gray-600">Feel lighter, burn fat efficiently, and kickstart your metabolism the right way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-gradient-to-r from-gray-50 to-blue-50 py-16 relative overflow-hidden">
+        {/* Animated shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-100 rounded-full opacity-50 blur-2xl animate-blob"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="animate-fade-in">
+            <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              Try Mitolyn Risk-Free Today
+            </button>
+            <p className="mt-4 text-gray-600 animate-fade-in animation-delay-200">Limited stock available — ships within 24 hrs.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Gradient Wave Divider */}
+      <div className="relative">
+        <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 py-8 px-4 text-center text-white relative overflow-hidden">
+          {/* Animated particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-12 h-12 rounded-full bg-white opacity-10 animate-blob"></div>
+            <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-white opacity-10 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-1/4 left-1/2 w-16 h-16 rounded-full bg-white opacity-10 animate-blob animation-delay-4000"></div>
+            <div className="absolute bottom-1/3 right-1/3 w-10 h-10 rounded-full bg-white opacity-10 animate-blob"></div>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold drop-shadow-md animate-slide-up" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+            Claim Your Discounted Mitolyn
+          </h2>
+          <p className="text-2xl sm:text-3xl mt-2 font-semibold drop-shadow-md animate-slide-up animation-delay-200" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+            Below For Huge Savings
+          </p>
+        </div>
+        {/* Enhanced Wave SVG with animation */}
+        <div className="absolute bottom-[-1px] left-0 right-0 w-full overflow-hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
+            <defs>
+              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#10b981" />
+                <stop offset="50%" stopColor="#14b8a6" />
+                <stop offset="100%" stopColor="#06b6d4" />
+              </linearGradient>
+              <clipPath id="waveClip">
+                <path d="M0,64L40,69.3C80,75,160,85,240,90.7C320,96,400,96,480,85.3C560,75,640,53,720,53.3C800,53,880,75,960,85.3C1040,96,1120,96,1200,80C1280,64,1360,32,1400,16L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
+              </clipPath>
+            </defs>
+            <g clipPath="url(#waveClip)">
+              <path d="M0,64L40,69.3C80,75,160,85,240,90.7C320,96,400,96,480,85.3C560,75,640,53,720,53.3C800,53,880,75,960,85.3C1040,96,1120,96,1200,80C1280,64,1360,32,1400,16L1440,0L1440,120L1400,120C1360,120,1280,120,1200,120C1120,120,1040,120,960,120C880,120,800,120,720,120C640,120,560,120,480,120C400,120,320,120,240,120C160,120,80,120,40,120L0,120Z" fill="url(#waveGradient)" className="animate-wave" />
+              <path d="M0,64L40,69.3C80,75,160,85,240,90.7C320,96,400,96,480,85.3C560,75,640,53,720,53.3C800,53,880,75,960,85.3C1040,96,1120,96,1200,80C1280,64,1360,32,1400,16L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z" fill="url(#waveGradient)" fillOpacity="0.5" className="animate-wave animation-delay-2000" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      {/* Testimonial Carousel Section */}
+      <TestimonialCarousel />
+      
+      {/* Product Pricing Section */}
+      <div className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ProductOptions />
+        </div>
+      </div>
     </div>
   );
 }

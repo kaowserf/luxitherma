@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .image-box img {
+            max-width: 100%;
+            height: 300px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .image-box p {
+            margin-top: 10px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Test Page</h1>
+    <p>This page tests if the images can be loaded directly from the public folder.</p>
+    
+    <div class="image-container">
+        <div class="image-box">
+            <h2>Image 1: price 01.png</h2>
+            <img src="/price 01.png" alt="Price 01">
+            <p>Path: /price 01.png</p>
+        </div>
+        
+        <div class="image-box">
+            <h2>Image 2: price 02.png</h2>
+            <img src="/price 02.png" alt="Price 02">
+            <p>Path: /price 02.png</p>
+        </div>
+        
+        <div class="image-box">
+            <h2>Image 3: price 3.png</h2>
+            <img src="/price 3.png" alt="Price 3">
+            <p>Path: /price 3.png</p>
+        </div>
+    </div>
+    
+    <h2>Alternative Paths</h2>
+    <div class="image-container">
+        <div class="image-box">
+            <h2>Image 1: /images/price 01.png</h2>
+            <img src="/images/price 01.png" alt="Price 01">
+            <p>Path: /images/price 01.png</p>
+        </div>
+        
+        <div class="image-box">
+            <h2>Image 2: /images/price 02.png</h2>
+            <img src="/images/price 02.png" alt="Price 02">
+            <p>Path: /images/price 02.png</p>
+        </div>
+        
+        <div class="image-box">
+            <h2>Image 3: /images/price 3.png</h2>
+            <img src="/images/price 3.png" alt="Price 3">
+            <p>Path: /images/price 3.png</p>
+        </div>
+    </div>
+</body>
+</html> 
