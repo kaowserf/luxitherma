@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -128,6 +128,23 @@ export default function TestimonialCarousel() {
     ));
   };
 
+  // Handle slide navigation
+  const nextSlide = useCallback(() => {
+    if (activeIndex < testimonials.length - 1) {
+      setActiveIndex(activeIndex + 1);
+    } else {
+      setActiveIndex(0);
+    }
+  }, [activeIndex]);
+  
+  const prevSlide = useCallback(() => {
+    if (activeIndex > 0) {
+      setActiveIndex(activeIndex - 1);
+    } else {
+      setActiveIndex(testimonials.length - 1);
+    }
+  }, [activeIndex]);
+
   // Auto scroll functionality
   useEffect(() => {
     const interval = setInterval(() => {
@@ -135,24 +152,7 @@ export default function TestimonialCarousel() {
     }, 5000);
     
     return () => clearInterval(interval);
-  }, [activeIndex]);
-
-  // Handle slide navigation
-  const nextSlide = () => {
-    if (activeIndex < testimonials.length - 1) {
-      setActiveIndex(activeIndex + 1);
-    } else {
-      setActiveIndex(0);
-    }
-  };
-  
-  const prevSlide = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    } else {
-      setActiveIndex(testimonials.length - 1);
-    }
-  };
+  }, [nextSlide]);
 
   // Handle touch/mouse events for swiping
   const handleMouseDown = (e) => {

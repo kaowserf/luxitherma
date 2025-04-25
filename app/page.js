@@ -48,7 +48,7 @@ export default function Home() {
           </h2>
           
           <p className="text-xl text-center mb-16 text-gray-700 max-w-4xl mx-auto">
-            Imagine waking up refreshed, thinking clearer, and moving like you're 10 years younger. That's the Mitolyn difference.
+            Imagine waking up refreshed, thinking clearer, and moving like you&apos;re 10 years younger. That&apos;s the Mitolyn difference.
           </p>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">

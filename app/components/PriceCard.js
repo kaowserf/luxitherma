@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const PriceCard = ({ imageUrl, altText, isFeatured, orderLink }) => {
   return (
@@ -11,12 +12,16 @@ const PriceCard = ({ imageUrl, altText, isFeatured, orderLink }) => {
       <div 
         className={`relative ${isFeatured ? 'h-[420px] md:h-[480px] lg:h-[530px]' : 'h-[400px] md:h-[450px] lg:h-[500px]'} w-full rounded-xl overflow-hidden ${isFeatured ? 'shadow-2xl hover:shadow-2xl border-4 border-emerald-500' : 'shadow-lg hover:shadow-xl'} transition-all duration-300 bg-white flex items-center justify-center`}
       >
-        {/* Simple direct image, same as in debug page */}
-        <img
-          src={imageUrl}
-          alt={altText}
-          className="max-w-full max-h-full object-contain p-4 transition-all duration-300 group-hover:brightness-110"
-        />
+        {/* Replace img with Next.js Image component */}
+        <div className="relative w-full h-full flex items-center justify-center p-4">
+          <Image
+            src={imageUrl}
+            alt={altText}
+            fill
+            style={{ objectFit: 'contain' }}
+            className="transition-all duration-300 group-hover:brightness-110"
+          />
+        </div>
         
         {isFeatured && (
           <div className="absolute top-0 left-0 right-0 bg-emerald-500 text-white text-center py-2 font-bold">

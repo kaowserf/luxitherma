@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function DebugPage() {
   // Define the image paths to test
   const imagePaths = [
@@ -19,11 +21,12 @@ export default function DebugPage() {
           <div key={index} className="border rounded-lg p-4 bg-white shadow">
             <h2 className="text-lg font-semibold mb-2">Test Image {index + 1}</h2>
             <p className="text-sm mb-4 font-mono break-all">{path}</p>
-            <div className="h-[300px] bg-gray-100 rounded flex items-center justify-center">
-              <img 
+            <div className="h-[300px] bg-gray-100 rounded flex items-center justify-center relative">
+              <Image 
                 src={path}
                 alt={`Test image ${index + 1}`}
-                className="max-h-full max-w-full object-contain"
+                fill
+                style={{ objectFit: 'contain' }}
               />
             </div>
           </div>
@@ -35,7 +38,7 @@ export default function DebugPage() {
         <ul className="list-disc pl-5">
           <li>Server time: {new Date().toISOString()}</li>
           <li>Image paths are relative to the public directory</li>
-          <li>If images don't appear, check file names and paths</li>
+          <li>If images don&apos;t appear, check file names and paths</li>
         </ul>
       </div>
     </div>

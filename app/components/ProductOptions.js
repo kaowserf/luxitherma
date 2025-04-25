@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function ProductOptions() {
   return (
@@ -28,17 +29,15 @@ export default function ProductOptions() {
         }}>
           <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>Basic Package</h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <img 
-              src="/images/price 01.png"
-              alt="Basic Package"
-              style={{ 
-                width: '100%', 
-                border: '1px solid #ddd',
-                borderRadius: '8px',
-                transition: 'transform 0.3s ease, filter 0.3s ease'
-              }}
-              className="hover-image"
-            />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '1px solid #ddd', borderRadius: '8px' }}>
+              <Image 
+                src="/images/price 01.png"
+                alt="Basic Package"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="hover-image transition-all"
+              />
+            </div>
             <div style={{ 
               position: 'absolute', 
               top: 0, 
@@ -89,17 +88,15 @@ export default function ProductOptions() {
             Premium Package (BEST VALUE)
           </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <img 
-              src="/images/price 02.png"
-              alt="Premium Package"
-              style={{ 
-                width: '100%', 
-                border: '4px solid #059669',
-                borderRadius: '8px',
-                transition: 'transform 0.3s ease, filter 0.3s ease'
-              }}
-              className="hover-image"
-            />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #059669', borderRadius: '8px' }}>
+              <Image 
+                src="/images/price 02.png"
+                alt="Premium Package"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="hover-image transition-all"
+              />
+            </div>
             <div style={{ 
               position: 'absolute', 
               top: 0, 
@@ -148,17 +145,15 @@ export default function ProductOptions() {
         }}>
           <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>Family Package</h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <img 
-              src="/images/price 3.png"
-              alt="Family Package"
-              style={{ 
-                width: '100%', 
-                border: '1px solid #ddd',
-                borderRadius: '8px',
-                transition: 'transform 0.3s ease, filter 0.3s ease'
-              }}
-              className="hover-image"
-            />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '1px solid #ddd', borderRadius: '8px' }}>
+              <Image 
+                src="/images/price 3.png"
+                alt="Family Package"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="hover-image transition-all"
+              />
+            </div>
             <div style={{ 
               position: 'absolute', 
               top: 0, 
