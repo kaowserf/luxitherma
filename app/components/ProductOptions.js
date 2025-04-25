@@ -214,12 +214,6 @@ export default function ProductOptions() {
           opacity: 1 !important;
         }
       `}</style>
-      
-      <div className="mt-10 text-center">
-        <a href="/debug" className="text-sm text-gray-500 hover:underline">
-          Having trouble seeing the images? Click here for diagnostics
-        </a>
-      </div>
     </div>
   );
 } 
