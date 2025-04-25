@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #059669; /* Emerald 600 */
-  --primary-hover: #047857; /* Emerald 700 */
-  --secondary: #f9fafb; /* Gray 50 */
+  --primary: #dc2626; /* Red 600 */
+  --primary-hover: #b91c1c; /* Red 700 */
+  --secondary: #fef2f2; /* Red 50 */
   --text-body: #4b5563; /* Gray 600 */
   --text-heading: #1f2937; /* Gray 800 */
 }
@@ -21,12 +21,17 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #10b981; /* Emerald 500 */
-    --primary-hover: #059669; /* Emerald 600 */
+    --primary: #ef4444; /* Red 500 */
+    --primary-hover: #dc2626; /* Red 600 */
     --secondary: #1f2937; /* Gray 800 */
     --text-body: #d1d5db; /* Gray 300 */
     --text-heading: #f9fafb; /* Gray 50 */
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding for fixed navbar */
 }
 
 body {
@@ -82,6 +87,10 @@ button:hover, .button:hover {
 
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
 }
 
 .animation-delay-200 {
@@ -153,6 +162,15 @@ button:hover, .button:hover {
   }
   100% {
     transform: scale(1) translate(0px, 0px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

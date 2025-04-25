@@ -27,11 +27,11 @@ export default function ProductOptions() {
           position: 'relative',
           cursor: 'pointer'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#3b82f6' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#ef4444' }}>
             Basic Package
           </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #3b82f6', borderRadius: '8px' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #ef4444', borderRadius: '8px' }}>
               <Image 
                 src="/images/price 01.png"
                 alt="Basic Package"
@@ -60,7 +60,7 @@ export default function ProductOptions() {
                 href="#order-basic" 
                 style={{ 
                   padding: '10px 20px', 
-                  background: '#059669', 
+                  background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',
@@ -86,11 +86,11 @@ export default function ProductOptions() {
           position: 'relative',
           cursor: 'pointer'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#059669' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#dc2626' }}>
             Premium Package (BEST VALUE)
           </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #059669', borderRadius: '8px' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #dc2626', borderRadius: '8px' }}>
               <Image 
                 src="/images/price 02.png"
                 alt="Premium Package"
@@ -119,7 +119,7 @@ export default function ProductOptions() {
                 href="#order-premium" 
                 style={{ 
                   padding: '12px 24px', 
-                  background: '#059669', 
+                  background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',
@@ -145,11 +145,11 @@ export default function ProductOptions() {
           position: 'relative',
           cursor: 'pointer'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#8b5cf6' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#b91c1c' }}>
             Family Package
           </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #8b5cf6', borderRadius: '8px' }}>
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #b91c1c', borderRadius: '8px' }}>
               <Image 
                 src="/images/price 3.png"
                 alt="Family Package"
@@ -178,7 +178,7 @@ export default function ProductOptions() {
                 href="#order-family" 
                 style={{ 
                   padding: '10px 20px', 
-                  background: '#059669', 
+                  background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',

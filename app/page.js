@@ -1,6 +1,9 @@
 import Image from "next/image";
 import ProductOptions from "./components/ProductOptions";
 import TestimonialCarousel from "./components/TestimonialCarousel";
+import ProductSlider from "./components/ProductSlider";
+import MoneyBackGuarantee from "./components/MoneyBackGuarantee";
+import BonusesSection from "./components/BonusesSection";
 
 export default function Home() {
   return (
@@ -18,30 +21,30 @@ export default function Home() {
               priority
               className="brightness-[0.85]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/30 via-transparent to-black/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-red-900/30 via-transparent to-black/40"></div>
             
             {/* Animated Glow Effects */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-blob"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-3xl animate-blob"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-rose-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
           </div>
         </div>
         
         {/* Content Overlay */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-            Tired of Feeling Drained? <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300">This Cell-Level Energy Boost</span> Could Change Your Life in 7 Days.
+            Tired of Feeling Drained? <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-rose-300">This Cell-Level Energy Boost</span> Could Change Your Life in 7 Days.
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl mb-8 font-light max-w-4xl mx-auto animate-fade-in animation-delay-200">
             Clinically researched supplement targeting cell performance, metabolism, and long-term health.
           </h2>
-          <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
+          <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
             Try Mitolyn Risk-Free Today
           </button>
         </div>
       </div>
 
       {/* Benefits Section */}
-      <div className="py-20 bg-white">
+      <div id="benefits" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
             What Makes Mitolyn a Game-Changer?
@@ -52,17 +55,9 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Product Image */}
+            {/* Product Image Slider - Replacing static image with dynamic slider */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-md aspect-square">
-                <Image
-                  src="/images/product-home.png"
-                  alt="Mitolyn Product"
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  className="drop-shadow-xl"
-                />
-              </div>
+              <ProductSlider />
             </div>
 
             {/* Benefits List */}
@@ -112,16 +107,16 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-gray-50 to-blue-50 py-16 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-gray-50 to-red-50 py-16 relative overflow-hidden">
         {/* Animated shapes */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-100 rounded-full opacity-50 blur-2xl animate-blob"></div>
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-100 rounded-full opacity-50 blur-2xl animate-blob animation-delay-4000"></div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-red-100 rounded-full opacity-50 blur-2xl animate-blob"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-rose-100 rounded-full opacity-50 blur-2xl animate-blob animation-delay-4000"></div>
         </div>
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in">
-            <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Try Mitolyn Risk-Free Today
             </button>
             <p className="mt-4 text-gray-600 animate-fade-in animation-delay-200">Limited stock available — ships within 24 hrs.</p>
@@ -131,7 +126,7 @@ export default function Home() {
 
       {/* Gradient Wave Divider */}
       <div className="relative">
-        <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 py-8 px-4 text-center text-white relative overflow-hidden">
+        <div className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 py-8 px-4 text-center text-white relative overflow-hidden">
           {/* Animated particles */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-12 h-12 rounded-full bg-white opacity-10 animate-blob"></div>
@@ -152,9 +147,9 @@ export default function Home() {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[60px] md:h-[80px]">
             <defs>
               <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#10b981" />
-                <stop offset="50%" stopColor="#14b8a6" />
-                <stop offset="100%" stopColor="#06b6d4" />
+                <stop offset="0%" stopColor="#ef4444" />
+                <stop offset="50%" stopColor="#f43f5e" />
+                <stop offset="100%" stopColor="#dc2626" />
               </linearGradient>
               <clipPath id="waveClip">
                 <path d="M0,64L40,69.3C80,75,160,85,240,90.7C320,96,400,96,480,85.3C560,75,640,53,720,53.3C800,53,880,75,960,85.3C1040,96,1120,96,1200,80C1280,64,1360,32,1400,16L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
@@ -169,14 +164,22 @@ export default function Home() {
       </div>
 
       {/* Testimonial Carousel Section */}
-      <TestimonialCarousel />
+      <div id="testimonials">
+        <TestimonialCarousel />
+      </div>
       
       {/* Product Pricing Section */}
-      <div className="py-20 bg-white">
+      <div id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ProductOptions />
         </div>
       </div>
+      
+      {/* Money Back Guarantee Section */}
+      <MoneyBackGuarantee />
+      
+      {/* Bonuses Section */}
+      <BonusesSection />
     </div>
   );
 }

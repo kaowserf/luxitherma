@@ -203,19 +203,19 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <div className="py-12 bg-gradient-to-b from-emerald-50 via-white to-blue-50 relative overflow-hidden">
+    <div className="py-12 bg-gradient-to-b from-red-50 via-white to-rose-50 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute top-1/2 -right-48 w-96 h-96 bg-gradient-to-br from-blue-300 to-cyan-500 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-24 left-1/3 w-96 h-96 bg-gradient-to-br from-purple-300 to-indigo-500 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-red-300 to-red-500 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute top-1/2 -right-48 w-96 h-96 bg-gradient-to-br from-rose-300 to-rose-500 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-24 left-1/3 w-96 h-96 bg-gradient-to-br from-pink-300 to-rose-500 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center mb-10">
           <div className="md:w-1/3 mb-6 md:mb-0 md:pr-10 animate-fade-in">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 animate-slide-up">
-              Our Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">Love Mitolyn</span>
+              Our Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600">Love Mitolyn</span>
             </h2>
             <p className="text-lg text-gray-700 animate-slide-up animation-delay-200">
               Join thousands of satisfied customers who have experienced the transformative effects of Mitolyn on their daily energy and wellbeing.
@@ -273,7 +273,7 @@ export default function TestimonialCarousel() {
                     <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden h-full flex flex-col border border-gray-100">
                       <div className="p-6 flex-grow">
                         <div className="flex items-center mb-4">
-                          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-emerald-100 shadow-md transform transition-transform duration-300 hover:scale-110">
+                          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-red-100 shadow-md transform transition-transform duration-300 hover:scale-110">
                             <Image
                               src={testimonial.image}
                               alt={testimonial.name}
@@ -286,7 +286,7 @@ export default function TestimonialCarousel() {
                             <h3 className="text-base font-bold text-gray-900">{testimonial.name}</h3>
                             <p className="text-xs text-gray-600">{testimonial.age}, {testimonial.location}</p>
                           </div>
-                          <div className="ml-auto bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full p-1.5 shadow-md">
+                          <div className="ml-auto bg-gradient-to-br from-red-400 to-red-600 rounded-full p-1.5 shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
                               <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                             </svg>
@@ -307,7 +307,7 @@ export default function TestimonialCarousel() {
             <div className="flex justify-between mt-6">
               <button 
                 onClick={prevSlide}
-                className="bg-white hover:bg-gray-50 text-gray-800 rounded-full p-2 shadow-md transition-all duration-300 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 hover:scale-110"
+                className="bg-white hover:bg-gray-50 text-gray-800 rounded-full p-2 shadow-md transition-all duration-300 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 hover:scale-110"
                 aria-label="Previous testimonial"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -322,7 +322,7 @@ export default function TestimonialCarousel() {
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`transition-all duration-300 ${
-                      index === activeIndex ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 w-6 h-2 rounded-full' : 'bg-gray-300 w-2 h-2 rounded-full hover:bg-gray-400'
+                      index === activeIndex ? 'bg-gradient-to-r from-red-500 to-rose-500 w-6 h-2 rounded-full' : 'bg-gray-300 w-2 h-2 rounded-full hover:bg-gray-400'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -331,7 +331,7 @@ export default function TestimonialCarousel() {
               
               <button 
                 onClick={nextSlide}
-                className="bg-white hover:bg-gray-50 text-gray-800 rounded-full p-2 shadow-md transition-all duration-300 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 hover:scale-110"
+                className="bg-white hover:bg-gray-50 text-gray-800 rounded-full p-2 shadow-md transition-all duration-300 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 hover:scale-110"
                 aria-label="Next testimonial"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -344,7 +344,7 @@ export default function TestimonialCarousel() {
         
         {/* CTA Button */}
         <div className="text-center mt-8 animate-fade-in animation-delay-800">
-          <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold py-3 px-8 rounded-full text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-3 px-8 rounded-full text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
             Get Your Mitolyn Today
           </button>
         </div>
