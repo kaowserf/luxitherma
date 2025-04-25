@@ -27,7 +27,9 @@ export default function ProductOptions() {
           position: 'relative',
           cursor: 'pointer'
         }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>Basic Package</h3>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#3b82f6' }}>
+            Basic Package
+          </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
             <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #3b82f6', borderRadius: '8px' }}>
               <Image 
@@ -143,7 +145,9 @@ export default function ProductOptions() {
           position: 'relative',
           cursor: 'pointer'
         }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>Family Package</h3>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px', color: '#8b5cf6' }}>
+            Family Package
+          </h3>
           <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
             <div style={{ position: 'relative', width: '100%', aspectRatio: '1', border: '4px solid #8b5cf6', borderRadius: '8px' }}>
               <Image 
