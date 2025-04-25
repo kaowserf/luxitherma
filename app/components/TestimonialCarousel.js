@@ -10,7 +10,7 @@ const testimonials = [
     age: 42,
     location: "Denver, CO",
     image: "/customer img/1.png",
-    quote: "After just 2 weeks of Mitolyn, I have more energy than I've had in years. I'm back to my morning runs and feeling incredible!",
+    quote: "After just 2 weeks of Mitolyn, I have more energy than I&apos;ve had in years. I&apos;m back to my morning runs and feeling incredible!",
     rating: 5
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     age: 55,
     location: "Portland, OR",
     image: "/customer img/2.png",
-    quote: "The mental clarity I've experienced is remarkable. I'm more productive at work and actually have energy left for my family at the end of the day.",
+    quote: "The mental clarity I&apos;ve experienced is remarkable. I&apos;m more productive at work and actually have energy left for my family at the end of the day.",
     rating: 5
   },
   {
@@ -37,7 +37,7 @@ const testimonials = [
     age: 60,
     location: "Phoenix, AZ",
     image: "/customer img/5.png",
-    quote: "I was skeptical at first, but the results speak for themselves. My energy levels are up and I'm sleeping better than I have in a decade.",
+    quote: "I was skeptical at first, but the results speak for themselves. My energy levels are up and I&apos;m sleeping better than I have in a decade.",
     rating: 5
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     age: 45,
     location: "Boston, MA",
     image: "/customer img/6.png",
-    quote: "I've tried so many supplements before, but Mitolyn is the only one that delivered real results. I feel like I've turned back the clock!",
+    quote: "I&apos;ve tried so many supplements before, but Mitolyn is the only one that delivered real results. I feel like I&apos;ve turned back the clock!",
     rating: 5
   },
   {
@@ -55,7 +55,7 @@ const testimonials = [
     age: 52,
     location: "Atlanta, GA",
     image: "/customer img/8.png",
-    quote: "The difference in my workout recovery has been night and day. I'm lifting more and feeling stronger at 52 than I did at 40.",
+    quote: "The difference in my workout recovery has been night and day. I&apos;m lifting more and feeling stronger at 52 than I did at 40.",
     rating: 5
   },
   {
@@ -73,7 +73,7 @@ const testimonials = [
     age: 48,
     location: "Seattle, WA",
     image: "/customer img/11.png",
-    quote: "My brain fog has lifted completely. I'm thinking clearer and remembering things better than I have in years.",
+    quote: "My brain fog has lifted completely. I&apos;m thinking clearer and remembering things better than I have in years.",
     rating: 5
   },
   {
@@ -82,7 +82,7 @@ const testimonials = [
     age: 57,
     location: "Miami, FL",
     image: "/customer img/12.png",
-    quote: "After starting Mitolyn, my friends keep asking what my secret is! I have more energy and everyone says I'm glowing.",
+    quote: "After starting Mitolyn, my friends keep asking what my secret is! I have more energy and everyone says I&apos;m glowing.",
     rating: 5
   },
   {
@@ -100,7 +100,7 @@ const testimonials = [
     age: 41,
     location: "Minneapolis, MN",
     image: "/customer img/14.png",
-    quote: "As someone who's struggled with low energy for years, finding Mitolyn has been life-changing. I finally feel like myself again!",
+    quote: "As someone who&apos;s struggled with low energy for years, finding Mitolyn has been life-changing. I finally feel like myself again!",
     rating: 5
   }
 ];

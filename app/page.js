@@ -83,7 +83,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Sharpen Mental Focus</h3>
-                  <p className="mt-2 text-gray-600">Stay sharp, clear, and focused — whether you're working, studying, or parenting.</p>
+                  <p className="mt-2 text-gray-600">Stay sharp, clear, and focused — whether you&apos;re working, studying, or parenting.</p>
                 </div>
               </div>
 
