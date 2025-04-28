@@ -1,13 +1,28 @@
+'use client';
+
 import Image from "next/image";
 import ProductOptions from "./components/ProductOptions";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import ProductSlider from "./components/ProductSlider";
 import MoneyBackGuarantee from "./components/MoneyBackGuarantee";
 import BonusesSection from "./components/BonusesSection";
+import Link from "next/link";
+import { useState } from "react";
+import OrderFormPopup from "./components/OrderFormPopup";
 
 export default function Home() {
+  const [showOrderForm, setShowOrderForm] = useState(false);
+
+  const handleOrderNowClick = (e) => {
+    e.preventDefault();
+    setShowOrderForm(true);
+  };
+
   return (
-    <div className="font-[family-name:var(--font-geist-sans)]">
+    <div className="font-[family-name:var(--font-inter)]">
+      {/* Order Form Popup */}
+      <OrderFormPopup isOpen={showOrderForm} onClose={() => setShowOrderForm(false)} />
+
       {/* Hero Section with Background Image */}
       <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Gradient Overlay */}
@@ -37,9 +52,20 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl md:text-3xl mb-8 font-light max-w-4xl mx-auto animate-fade-in animation-delay-200">
             Clinically researched supplement targeting cell performance, metabolism, and long-term health.
           </h2>
-          <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
-            Try Mitolyn Risk-Free Today
-          </button>
+          <div className="space-x-4">
+            <Link href="/pre-landing" className="inline-block">
+              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
+                Get Your FREE Energy Guide
+              </button>
+            </Link>
+            <a href="#" onClick={handleOrderNowClick}>
+              <button 
+                className="bg-white text-red-600 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-600 hover:bg-gray-100"
+              >
+                Order Now
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -115,12 +141,21 @@ export default function Home() {
         </div>
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="animate-fade-in">
-            <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Try Mitolyn Risk-Free Today
-            </button>
-            <p className="mt-4 text-gray-600 animate-fade-in animation-delay-200">Limited stock available — ships within 24 hrs.</p>
+          <div className="animate-fade-in flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <Link href="/pre-landing" className="inline-block">
+              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto">
+                Get Your FREE Energy Guide
+              </button>
+            </Link>
+            <a href="#" onClick={handleOrderNowClick}>
+              <button 
+                className="bg-white text-red-600 border-2 border-red-500 font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto"
+              >
+                Order Now
+              </button>
+            </a>
           </div>
+          <p className="mt-4 text-gray-600 animate-fade-in animation-delay-200">Limited stock available — ships within 24 hrs.</p>
         </div>
       </div>
 
@@ -171,7 +206,7 @@ export default function Home() {
       {/* Product Pricing Section */}
       <div id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ProductOptions />
+          <ProductOptions openModal={() => setShowOrderForm(true)} />
         </div>
       </div>
       

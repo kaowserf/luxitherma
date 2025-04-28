@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function Navbar() {
+export default function Navbar({ openModal }) {
   const [scrolled, setScrolled] = useState(false);
   
   // Handle scroll event to change navbar style when scrolling
@@ -23,6 +23,13 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
+
+  const handleOrderClick = (e) => {
+    e.preventDefault();
+    if (typeof openModal === 'function') {
+      openModal();
+    }
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -74,14 +81,23 @@ export default function Navbar() {
               Pricing
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
+            <Link 
+              href="#faq"
+              className={`hover:text-red-400 transition-colors duration-300 
+                        ${scrolled ? 'text-gray-800' : 'text-white'} relative group`}
+            >
+              FAQ
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
           </div>
           
-          {/* Shopping Cart Illustration - Optional */}
+          {/* Order Now Button */}
           <div className={`${scrolled ? 'text-gray-900' : 'text-white'} hover:text-red-400 transition-colors duration-300 cursor-pointer`}>
             <button 
+              onClick={handleOrderClick}
               className={`bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 
-                      text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 
-                      transform hover:scale-105 shadow hover:shadow-lg`}
+                    text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 
+                    transform hover:scale-105 shadow hover:shadow-lg`}
             >
               Order Now
             </button>

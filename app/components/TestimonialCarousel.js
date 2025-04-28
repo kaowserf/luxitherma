@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const testimonials = [
   {
@@ -344,9 +345,11 @@ export default function TestimonialCarousel() {
         
         {/* CTA Button */}
         <div className="text-center mt-8 animate-fade-in animation-delay-800">
-          <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-3 px-8 rounded-full text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Get Your Mitolyn Today
-          </button>
+          <Link href="/pre-landing" className="inline-block">
+            <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-3 px-8 rounded-full text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              Get Your FREE Energy Guide
+            </button>
+          </Link>
         </div>
       </div>
     </div>

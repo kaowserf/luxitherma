@@ -1,9 +1,50 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BonusesSection() {
+  // Add state for FAQ accordion
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  
+  // Toggle FAQ item
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+  
+  // FAQ data
+  const faqItems = [
+    {
+      question: "Is Mitolyn right for me?",
+      answer: "Do you have deep stubborn fat stores that no diet or exercise seems to remove? Then the answer is yes Mitolyn is right for you. Mitolyn has changed the lives of thousands of women and men from 18 to 80 and is designed to rapidly liquify fat in even the worst cases."
+    },
+    {
+      question: "Is Mitolyn safe?",
+      answer: "Mitolyn is a natural proprietary formula manufactured in the USA at our FDA registered and GMP certified facility using state of the art, precision engineered machinery and under the strictest and most sterile standards. Each ingredient is 100% plant-based, soy-free, dairy-free, non-GMO, and put through additional third-party inspections and quality control to ensure high purity and potency. As always we advise you to show a bottle of this to your doctor before you take it, just to be safe."
+    },
+    {
+      question: "How many bottles should I order?",
+      answer: "If you're over 35 years old or carry excess weight, we recommend you take Mitolyn for at least 3 to 6 months so it has enough time to work throughout your entire body to support healthy mitochondria levels, reach your desired weight, and lock it in for years into the future. Every 3 bottle package of Mitolyn comes with the 2 bonus books absolutely free. Or make the smart decision and get the heavily discounted 6 bottle package, which comes with the 2 bonus books absolutely free along with free shipping as well."
+    },
+    {
+      question: "What's the best way to take Mitolyn?",
+      answer: "Take one capsule of Mitolyn with a big glass of cold water every day. It's bespoke proprietary blend of natural ingredients will get to work dissolving fat for you even when sleeping."
+    },
+    {
+      question: "Is this a one time payment?",
+      answer: "Yes, your order today is a one-time payment with no auto-ship, subscriptions or hidden charges."
+    },
+    {
+      question: "What if Mitolyn doesn't work for me?",
+      answer: "Every single bottle of Mitolyn comes with our personal 90-day 100% money back guarantee. If for any reason you're unsatisfied with your results, just return all bottles (even if empty) for a full, no questions asked refund."
+    },
+    {
+      question: "What do I do now?",
+      answer: "This is the fun part. Click on one of the packages below. Enter your order details on our secure checkout page. After you've finished we'll get your Mitolyn shipped out to you straight away. Order 3 bottles and get the 2 free bonus books, or order 6 bottles and get the 2 free bonus books plus free shipping as well."
+    }
+  ];
+
   return (
     <div className="py-12 bg-gradient-to-b from-red-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,6 +210,69 @@ export default function BonusesSection() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* FAQ Section - Enhanced */}
+      <div className="py-20 bg-white relative overflow-hidden" id="faq">
+        {/* Background decorative elements */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-50 rounded-full opacity-60 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-rose-50 rounded-full opacity-60 blur-3xl"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Enhanced heading section with more visual prominence */}
+          <div className="text-center mb-16 animate-fade-in-up">
+            {/* Decorative icon */}
+            <div className="flex justify-center mb-5">
+              <div className="bg-gradient-to-r from-red-100 to-rose-100 w-16 h-16 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            
+            <div className="inline-block mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold relative z-10">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-rose-600">Frequently Asked Questions</span>
+                <div className="w-full h-3 bg-gradient-to-r from-red-100 to-rose-100 absolute bottom-0 left-0 -z-10 transform translate-y-2"></div>
+              </h2>
+            </div>
+            
+            <div className="w-24 h-1 bg-gradient-to-r from-red-300 to-rose-300 mx-auto mb-6"></div>
+            
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Got questions about Mitolyn? We've got answers. If you don't see your question here, feel free to contact our support team.
+            </p>
+          </div>
+          
+          <div className="space-y-4 animate-fade-in-stagger-1">
+            {faqItems.map((item, index) => (
+              <div 
+                key={index} 
+                className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 animate-fade-in-stagger-${Math.min(index + 1, 3)}`}
+                style={{ animationDelay: `${(index * 0.1) + 0.1}s` }}
+              >
+                <button
+                  className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                  onClick={() => toggleFaq(index)}
+                >
+                  <h3 className={`font-bold text-lg md:text-xl transition-colors duration-300 ${openFaqIndex === index ? "text-red-600" : "text-gray-900"}`}>
+                    {item.question}
+                  </h3>
+                  <span className={`transform transition-transform duration-300 ${openFaqIndex === index ? "rotate-180" : "rotate-0"}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${openFaqIndex === index ? "text-red-600" : "text-gray-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </button>
+                <div className={`px-6 overflow-hidden transition-all duration-300 ${openFaqIndex === index ? "max-h-96 pb-6" : "max-h-0"}`}>
+                  <p className="text-gray-700 bg-gradient-to-r from-white to-red-50 p-4 rounded-lg">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

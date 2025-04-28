@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function ProductOptions() {
+export default function ProductOptions({ openModal }) {
   return (
     <div>
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
@@ -56,15 +56,16 @@ export default function ProductOptions() {
             }} 
             className="hover-overlay"
             >
-              <a 
-                href="#order-basic" 
+              <button 
+                onClick={openModal}
                 style={{ 
                   padding: '10px 20px', 
                   background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',
-                  textDecoration: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
                   transform: 'translateY(20px)',
                   transition: 'transform 0.3s ease, opacity 0.3s ease',
                   opacity: 0
@@ -72,7 +73,7 @@ export default function ProductOptions() {
                 className="order-button"
               >
                 Order Now
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -115,15 +116,16 @@ export default function ProductOptions() {
             }} 
             className="hover-overlay"
             >
-              <a 
-                href="#order-premium" 
+              <button 
+                onClick={openModal}
                 style={{ 
                   padding: '12px 24px', 
                   background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',
-                  textDecoration: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
                   transform: 'translateY(20px)',
                   transition: 'transform 0.3s ease, opacity 0.3s ease',
                   opacity: 0
@@ -131,7 +133,7 @@ export default function ProductOptions() {
                 className="order-button"
               >
                 Order Now
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -174,15 +176,16 @@ export default function ProductOptions() {
             }} 
             className="hover-overlay"
             >
-              <a 
-                href="#order-family" 
+              <button 
+                onClick={openModal}
                 style={{ 
                   padding: '10px 20px', 
                   background: '#dc2626', 
                   color: 'white', 
                   borderRadius: '30px', 
                   fontWeight: 'bold',
-                  textDecoration: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
                   transform: 'translateY(20px)',
                   transition: 'transform 0.3s ease, opacity 0.3s ease',
                   opacity: 0
@@ -190,10 +193,20 @@ export default function ProductOptions() {
                 className="order-button"
               >
                 Order Now
-              </a>
+              </button>
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Add a main CTA button below the packages */}
+      <div className="text-center mt-12">
+        <button
+          onClick={openModal}
+          className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Choose Your Package
+        </button>
       </div>
       
       {/* CSS for the hover effects */}
