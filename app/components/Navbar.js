@@ -92,14 +92,23 @@ export default function Navbar({ openModal }) {
           </div>
           
           {/* Order Now Button */}
-          <div className={`${scrolled ? 'text-gray-900' : 'text-white'} hover:text-red-400 transition-colors duration-300 cursor-pointer`}>
+          <div className="cursor-pointer">
             <button 
               onClick={handleOrderClick}
-              className={`bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 
-                    text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 
-                    transform hover:scale-105 shadow hover:shadow-lg`}
+              className={`relative overflow-hidden group bg-gradient-to-r from-red-500 to-rose-500 
+                    hover:from-red-600 hover:to-rose-600 text-white px-6 py-2.5 rounded-full 
+                    font-bold transition-all duration-300 transform hover:scale-105 
+                    shadow-md hover:shadow-xl border border-white/10 ${
+                      scrolled ? 'border-red-400/20' : 'border-white/20'
+                    }`}
             >
-              Order Now
+              <span className="relative z-10 flex items-center">
+                Order Now
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
             </button>
           </div>
         </div>
