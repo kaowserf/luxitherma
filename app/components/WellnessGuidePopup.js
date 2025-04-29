@@ -170,7 +170,7 @@ export default function WellnessGuidePopup({ onClose }) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900 bg-white"
                     required
                   />
                 </div>
@@ -185,7 +185,7 @@ export default function WellnessGuidePopup({ onClose }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900 bg-white"
                     required
                   />
                 </div>
