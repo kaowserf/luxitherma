@@ -215,64 +215,79 @@ export default function BonusesSection() {
       </div>
       
       {/* FAQ Section - Enhanced */}
-      <div className="py-20 bg-white relative overflow-hidden" id="faq">
+      <div className="py-20 bg-gradient-to-br from-red-50 via-rose-50 to-red-100 relative overflow-hidden" id="faq">
         {/* Background decorative elements */}
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-50 rounded-full opacity-60 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-rose-50 rounded-full opacity-60 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-red-100 rounded-full opacity-60 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-rose-200 rounded-full opacity-60 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white rounded-full opacity-40 blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-white rounded-full opacity-30 blur-xl"></div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Enhanced heading section with more visual prominence */}
           <div className="text-center mb-16 animate-fade-in-up">
             {/* Decorative icon */}
             <div className="flex justify-center mb-5">
-              <div className="bg-gradient-to-r from-red-100 to-rose-100 w-16 h-16 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-gradient-to-r from-red-500 to-rose-500 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
             </div>
             
-            <div className="inline-block mb-6">
+            <div className="inline-block mb-6 relative">
               <h2 className="text-4xl md:text-5xl font-bold relative z-10">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-rose-600">Frequently Asked Questions</span>
-                <div className="w-full h-3 bg-gradient-to-r from-red-100 to-rose-100 absolute bottom-0 left-0 -z-10 transform translate-y-2"></div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600">Frequently Asked Questions</span>
               </h2>
+              <div className="w-full h-4 bg-gradient-to-r from-red-200 to-rose-200 absolute bottom-0 left-0 -z-10 transform translate-y-2 rounded-lg"></div>
             </div>
             
-            <div className="w-24 h-1 bg-gradient-to-r from-red-300 to-rose-300 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-400 to-rose-400 mx-auto mb-6"></div>
             
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-700 max-w-2xl mx-auto font-medium">
               Got questions about Mitolyn? We've got answers. If you don't see your question here, feel free to contact our support team.
             </p>
           </div>
           
-          <div className="space-y-4 animate-fade-in-stagger-1">
+          <div className="space-y-5 animate-fade-in-stagger-1">
             {faqItems.map((item, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 animate-fade-in-stagger-${Math.min(index + 1, 3)}`}
+                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-red-100 animate-fade-in-stagger-${Math.min(index + 1, 3)}`}
                 style={{ animationDelay: `${(index * 0.1) + 0.1}s` }}
               >
                 <button
-                  className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                  className={`w-full px-7 py-5 text-left flex justify-between items-center focus:outline-none transition-colors duration-300 ${openFaqIndex === index ? "bg-gradient-to-r from-red-50 to-rose-50" : "bg-white"}`}
                   onClick={() => toggleFaq(index)}
                 >
                   <h3 className={`font-bold text-lg md:text-xl transition-colors duration-300 ${openFaqIndex === index ? "text-red-600" : "text-gray-900"}`}>
                     {item.question}
                   </h3>
-                  <span className={`transform transition-transform duration-300 ${openFaqIndex === index ? "rotate-180" : "rotate-0"}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className={`h-6 w-6 ${openFaqIndex === index ? "text-red-600" : "text-gray-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span className={`flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full ${openFaqIndex === index ? "bg-red-500 text-white" : "bg-gray-100 text-gray-500"} transform transition-transform duration-300 ${openFaqIndex === index ? "rotate-180" : "rotate-0"}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </button>
-                <div className={`px-6 overflow-hidden transition-all duration-300 ${openFaqIndex === index ? "max-h-96 pb-6" : "max-h-0"}`}>
-                  <p className="text-gray-700 bg-gradient-to-r from-white to-red-50 p-4 rounded-lg">
-                    {item.answer}
-                  </p>
+                <div className={`overflow-hidden transition-all duration-500 ${openFaqIndex === index ? "max-h-96" : "max-h-0"}`}>
+                  <div className="px-7 pb-6 pt-2">
+                    <div className="bg-gradient-to-r from-red-50 to-rose-50 p-5 rounded-lg border-l-4 border-red-500 shadow-sm">
+                      <p className="text-gray-700">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Add CTA button at the bottom of FAQ */}
+          <div className="mt-12 text-center">
+            <Link href="#pricing">
+              <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105">
+                Order Mitolyn Today
+              </button>
+            </Link>
           </div>
         </div>
       </div>
