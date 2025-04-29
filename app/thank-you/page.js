@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-export default function ThankYouPage() {
+// Create a separate client component to use the useSearchParams hook
+function ThankYouContent() {
   const searchParams = useSearchParams();
   const [orderDetails, setOrderDetails] = useState({
     orderId: '',
@@ -31,7 +32,7 @@ export default function ThankYouPage() {
     // In a real implementation, this is where you would trigger
     // conversion tracking for analytics platforms
   }, [searchParams]);
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white flex flex-col">
       {/* Simple header with logo */}
@@ -218,5 +219,21 @@ export default function ThankYouPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Main component that wraps the content in a Suspense boundary
+export default function ThankYouPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-red-500"></div>
+          <p className="mt-4 text-gray-600">Loading order details...</p>
+        </div>
+      </div>
+    }>
+      <ThankYouContent />
+    </Suspense>
   );
 } 
