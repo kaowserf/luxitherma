@@ -50,12 +50,12 @@ export default function Navbar({ openModal }) {
             <h1 className={`font-bold text-xl sm:text-2xl md:text-3xl tracking-tight transition-all duration-300 relative
                             ${scrolled ? 'text-gray-900' : 'text-white'}`}>
               <span className="relative inline-block">
-                luxi
+                world
                 <span className="group-hover:w-full absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-rose-400 transition-all duration-300"></span>
               </span>
               <span className={`text-transparent bg-clip-text bg-gradient-to-r transition-all duration-300 
                             ${scrolled ? 'from-red-600 to-rose-600' : 'from-red-300 to-rose-300'}`}>
-                therma
+                trismegisto
               </span>
             </h1>
           </Link>

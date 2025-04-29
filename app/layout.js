@@ -15,7 +15,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "Mitolyn | Cell-Level Energy Boost",
+  title: "WorldTrismegisto | Cell-Level Energy Boost",
   description: "Clinically researched supplement targeting cell performance, metabolism, and long-term health.",
 };
 
