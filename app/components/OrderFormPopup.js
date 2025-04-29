@@ -84,22 +84,24 @@ export default function OrderFormPopup({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
+  // Prevent clicks inside the popup from closing it
+  const handlePopupClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 animate-fade-in px-4 sm:px-0">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-auto animate-scale-in">
-        {/* Header */}
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 animate-fade-in px-4 sm:px-0"
+      onClick={(e) => e.stopPropagation()} // Prevent clicks on backdrop from closing
+    >
+      <div 
+        className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-auto animate-scale-in"
+        onClick={handlePopupClick}
+      >
+        {/* Header - No close button */}
         <div className="bg-gradient-to-r from-red-500 to-rose-500 p-4 rounded-t-lg">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-center items-center">
             <h2 className="text-xl font-bold text-white">Complete Your Order</h2>
-            <button
-              onClick={onClose}
-              className="text-white hover:text-red-100 transition-colors focus:outline-none"
-              aria-label="Close"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
           </div>
         </div>
         
@@ -117,8 +119,23 @@ export default function OrderFormPopup({ isOpen, onClose }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 mb-4">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <svg className="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm text-yellow-700">
+                      Please complete this form to proceed with your order. This information is required to complete your purchase.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
               <p className="text-sm text-gray-600 mb-4">
-                Please fill out the form below to proceed to our secure checkout page.
+                Enter your details below to proceed to our secure checkout page.
               </p>
               
               {error && (

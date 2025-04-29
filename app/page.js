@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <div className="font-[family-name:var(--font-inter)]">
-      {/* Order Form Popup */}
-      <OrderFormPopup isOpen={showOrderForm} onClose={() => setShowOrderForm(false)} />
+      {/* Order Form Popup - Remove onClose functionality */}
+      <OrderFormPopup isOpen={showOrderForm} onClose={() => {}} />
 
       {/* Hero Section with Background Image */}
       <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
