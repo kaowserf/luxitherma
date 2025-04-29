@@ -52,15 +52,15 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl md:text-3xl mb-8 font-light max-w-4xl mx-auto animate-fade-in animation-delay-200">
             Clinically researched supplement targeting cell performance, metabolism, and long-term health.
           </h2>
-          <div className="space-x-4">
-            <Link href="/pre-landing" className="inline-block">
-              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-400">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in animation-delay-400">
+            <Link href="/pre-landing" className="w-full sm:w-auto">
+              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-4 px-8 sm:px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full">
                 Get Your FREE Energy Guide
               </button>
             </Link>
-            <a href="#" onClick={handleOrderNowClick}>
+            <a href="#" onClick={handleOrderNowClick} className="w-full sm:w-auto">
               <button 
-                className="bg-white text-red-600 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-fade-in animation-delay-600 hover:bg-gray-100"
+                className="bg-white text-red-600 font-bold py-4 px-8 sm:px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:bg-gray-100 w-full"
               >
                 Order Now
               </button>
@@ -142,14 +142,14 @@ export default function Home() {
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-            <Link href="/pre-landing" className="inline-block">
-              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto">
+            <Link href="/pre-landing" className="w-full md:w-auto">
+              <button className="bg-gradient-to-r from-red-500 to-rose-500 hover:from-red-600 hover:to-rose-600 text-white font-bold py-5 px-8 md:px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full">
                 Get Your FREE Energy Guide
               </button>
             </Link>
-            <a href="#" onClick={handleOrderNowClick}>
+            <a href="#" onClick={handleOrderNowClick} className="w-full md:w-auto">
               <button 
-                className="bg-white text-red-600 border-2 border-red-500 font-bold py-5 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto"
+                className="bg-white text-red-600 border-2 border-red-500 font-bold py-5 px-8 md:px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full"
               >
                 Order Now
               </button>

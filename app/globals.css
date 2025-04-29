@@ -257,3 +257,90 @@ button:hover, .button:hover {
     transform: translateX(0%) scaleY(1);
   }
 }
+
+/* Add these responsive utilities after the existing animation classes */
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-stack > * {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  
+  .mobile-padding {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-visible {
+    display: block !important;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem !important;
+  }
+  
+  .mobile-text-lg {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* Fix for buttons that might overflow or have text wrapping issues on mobile */
+button, .button {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Ensure images scale properly on mobile */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improved tap targets for mobile */
+@media (max-width: 640px) {
+  button, 
+  .button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Fix button text and icon alignment on mobile */
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* Prevent overflow issues with flex containers on small screens */
+.flex-safe-mobile {
+  flex-wrap: wrap;
+}

@@ -85,17 +85,26 @@ export default function OrderFormPopup({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 animate-fade-in">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-4 animate-scale-in">
-        {/* Header - No close button */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 animate-fade-in px-4 sm:px-0">
+      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-auto animate-scale-in">
+        {/* Header */}
         <div className="bg-gradient-to-r from-red-500 to-rose-500 p-4 rounded-t-lg">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-between items-center">
             <h2 className="text-xl font-bold text-white">Complete Your Order</h2>
+            <button
+              onClick={onClose}
+              className="text-white hover:text-red-100 transition-colors focus:outline-none"
+              aria-label="Close"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         </div>
         
         {/* Form Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {successMessage ? (
             <div className="text-center py-4">
               <div className="text-green-600 mb-4">
@@ -167,7 +176,9 @@ export default function OrderFormPopup({ isOpen, onClose }) {
                 disabled={isSubmitting}
                 className={`w-full bg-gradient-to-r from-red-500 to-rose-500 text-white font-bold py-3 px-6 rounded-md hover:from-red-600 hover:to-rose-600 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                {isSubmitting ? 'Processing...' : 'Continue to Checkout'}
+                <span className="button-content">
+                  {isSubmitting ? 'Processing...' : 'Continue to Checkout'}
+                </span>
               </button>
               
               <p className="text-xs text-gray-500 mt-4 text-center">

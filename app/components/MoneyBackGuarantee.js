@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function MoneyBackGuarantee() {
   return (
-    <div className="py-10 bg-gradient-to-b from-white to-red-50">
+    <div className="py-8 sm:py-10 bg-gradient-to-b from-white to-red-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Background decorative elements */}
@@ -16,8 +16,8 @@ export default function MoneyBackGuarantee() {
           <div className="relative z-10 bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-5 items-center">
               {/* Left side - Main monogram */}
-              <div className="p-6 flex justify-center items-center md:col-span-2">
-                <div className="relative w-44 h-44 md:w-56 md:h-56">
+              <div className="p-4 sm:p-6 flex justify-center items-center md:col-span-2">
+                <div className="relative w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56">
                   <Image 
                     src="/images/main monogram.png" 
                     alt="90-Day Money Back Guarantee" 
@@ -29,23 +29,23 @@ export default function MoneyBackGuarantee() {
               </div>
               
               {/* Right side - Text and sub monogram */}
-              <div className="p-6 bg-gradient-to-br from-red-50 to-white md:col-span-3">
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600">
+              <div className="p-4 sm:p-6 bg-gradient-to-br from-red-50 to-white md:col-span-3">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600">
                   100% SATISFACTION<br />90-DAY MONEY BACK GUARANTEE
                 </h2>
                 
-                <p className="text-gray-700 text-base mb-3 text-center md:text-left">
+                <p className="text-gray-700 text-sm sm:text-base mb-3 text-center md:text-left">
                   Your order today is protected by my iron-clad 90-day 100% money-back guarantee.
                 </p>
                 
-                <p className="text-gray-700 text-base mb-4 text-center md:text-left">
+                <p className="text-gray-700 text-sm sm:text-base mb-4 text-center md:text-left">
                   If you are not astonished by your results, let us know within 90 days and we'll refund every penny of your investment. No questions asked.
                 </p>
                 
                 {/* Compact layout with sub monogram and USA text */}
                 <div className="flex items-center flex-col md:flex-row md:justify-between">
                   {/* Sub monogram - smaller and simplified */}
-                  <div className="relative w-28 h-28 transition-all duration-300 hover:scale-105">
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 transition-all duration-300 hover:scale-105">
                     <Image 
                       src="/images/sub monogram.png" 
                       alt="Quality Guarantee" 
