@@ -2,25 +2,25 @@
 
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import PackageSelectionModal from './PackageSelectionModal';
+import OrderFormPopup from './OrderFormPopup';
 
 export default function NavbarContainer() {
-  const [showPackageModal, setShowPackageModal] = useState(false);
+  const [showOrderForm, setShowOrderForm] = useState(false);
   
-  // Open the package selection modal
-  const openPackageModal = () => {
-    setShowPackageModal(true);
+  // Open the order form popup
+  const openOrderForm = () => {
+    setShowOrderForm(true);
   };
 
-  // Close the package selection modal
-  const closePackageModal = () => {
-    setShowPackageModal(false);
+  // Close the order form popup
+  const closeOrderForm = () => {
+    setShowOrderForm(false);
   };
   
   return (
     <>
-      <Navbar openModal={openPackageModal} />
-      <PackageSelectionModal isOpen={showPackageModal} onClose={closePackageModal} />
+      <Navbar openModal={openOrderForm} />
+      <OrderFormPopup isOpen={showOrderForm} onClose={closeOrderForm} />
     </>
   );
 } 
